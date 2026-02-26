@@ -1,5 +1,5 @@
-input_file = r"C:\Users\KIIT\Downloads\dropdown (1).txt"
-output_file = r"C:\Users\KIIT\Desktop\PROGRAMMING\Python\file_formatting\contacts_final.html"
+input_file = r"FILE_PATH"
+output_file = r"FILE_PATH"
 
 
 # with open(input_file, "r", encoding="utf-8") as infile, \
@@ -57,7 +57,7 @@ with open(output_file, "w", encoding="utf-8") as outfile:
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Smart Contact List</title>
+<title>Contact List</title>
 
 <style>
 body {
@@ -169,7 +169,7 @@ window.onload = loadChecks;
     Reset All Checks
 </button>
 
-<h2>📱 Smart Contact List</h2>
+<h2>Maa Kamakhya Devalay Panda Contact List</h2>
 
 <input type="text" id="search" class="search-box" 
 placeholder="Search contact..." onkeyup="searchContacts()">
