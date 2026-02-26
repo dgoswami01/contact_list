@@ -1,5 +1,8 @@
-input_file = r"FILE_PATH"
-output_file = r"FILE_PATH"
+# input_file = r"FILE_PATH"
+# output_file = r"FILE_PATH"
+
+input_file = r"C:\Users\KIIT\Downloads\dropdown (1).txt"
+output_file = r"C:\Users\KIIT\Desktop\PROGRAMMING\Python\file_formatting\contacts_final.html"
 
 
 # with open(input_file, "r", encoding="utf-8") as infile, \
@@ -72,6 +75,7 @@ h2 {
     display: flex;
     align-items: flex-start;
     background: white;
+    position: relative;
     padding: 15px;
     margin-bottom: 10px;
     border-radius: 8px;
@@ -175,23 +179,52 @@ window.onload = loadChecks;
 placeholder="Search contact..." onkeyup="searchContacts()">
 """)
 
+#     # Add row number using enumerate
+#     for index, (name, number) in enumerate(contacts, start=1):
+#         whatsapp_number = country_code + number
+
+#         outfile.write(f"""
+# <div class="contact">
+#     <div class="numbering">{index}.</div>
+
+#     <div class="details">
+#         <input type="checkbox" value="{number}" 
+#             onchange="toggleCheck(this, '{number}')">
+#         <strong>{name}</strong><br><br>
+#         <a href="tel:{number}">📞 {number} </a>
+#         <a href="https://wa.me/{whatsapp_number}" target="_blank">💬 WhatsApp</a>
+#     </div>
+# </div>
+# """)
+
     # Add row number using enumerate
     for index, (name, number) in enumerate(contacts, start=1):
         whatsapp_number = country_code + number
 
         outfile.write(f"""
-<div class="contact">
-    <div class="numbering">{index}.</div>
+    <div class="contact">
+        <div class="numbering">{index}.</div>
 
-    <div class="details">
-        <input type="checkbox" value="{number}" 
-            onchange="toggleCheck(this, '{number}')">
-        <strong>{name}</strong><br><br>
-        <a href="tel:{number}">📞 {number} </a>
-        <a href="https://wa.me/{whatsapp_number}" target="_blank">💬 WhatsApp</a>
+        <div class="details">
+            <strong>{name}</strong><br><br>
+
+            <a href="tel:{number}">📞 {number}</a>
+            &nbsp;&nbsp;
+            <a href="https://wa.me/{whatsapp_number}" target="_blank">💬 WhatsApp</a>
+        </div>
+
+        <input type="checkbox"
+            value="{number}"
+            onchange="toggleCheck(this, '{number}')"
+            style="
+                position:absolute;
+                top:10px;
+                right:10px;
+                transform: scale(1.2);
+                cursor:pointer;
+            ">
     </div>
-</div>
-""")
+    """)
 
     outfile.write("""
 </body>
